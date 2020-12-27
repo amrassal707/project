@@ -20,6 +20,7 @@ public List<template> list() {
 @GetMapping("/templates/{id}")
 public ResponseEntity<template> get(@PathVariable Integer id) {
     try {
+    	System.out.println("getting ID");
     	template template=service.get(id);
     	 return new ResponseEntity<template>(template, HttpStatus.OK);
     }

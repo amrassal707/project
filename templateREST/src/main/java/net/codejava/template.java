@@ -23,6 +23,7 @@ public void setId(Integer id) {
 }
 public String getContent() {
 	return content;
+//	System.out.println("content returned successfully");
 }
 public void setContent(String content) {
 	this.content = content;

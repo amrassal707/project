@@ -52,6 +52,7 @@ public ResponseEntity<?> update(@RequestBody template template, @PathVariable In
 @DeleteMapping("/templates/{id}")
 public void delete(@PathVariable Integer id) {
     service.delete(id);
+    //deleted
 }
 
 }

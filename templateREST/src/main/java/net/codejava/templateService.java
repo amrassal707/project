@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
  
 @Service
 @Transactional
-// where all functions implemented from the repository in here
+// here is a service class that implements the repo interface 
 public class templateService {
 
     @Autowired

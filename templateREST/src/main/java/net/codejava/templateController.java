@@ -11,16 +11,16 @@ public class templateController {
 @Autowired 
 private templateService service;
 
-
+//read
 @GetMapping("/templates")
 public List<template> list() {
 	return service.listAll();
 }
-
+//read
 @GetMapping("/templates/{id}")
 public ResponseEntity<template> get(@PathVariable Integer id) {
     try {
-    	System.out.println("getting ID");
+    	System.out.println("checking the function");
     	template template=service.get(id);
     	 return new ResponseEntity<template>(template, HttpStatus.OK);
     }
@@ -30,14 +30,17 @@ public ResponseEntity<template> get(@PathVariable Integer id) {
        
        
 }
-
+//create
 @PostMapping("/addtemplate")
 public void add(@RequestBody template template) {
+	System.out.println("checking the function");
     service.save(template);
 }
+//update
 @PutMapping("/templates/{id}")
 public ResponseEntity<?> update(@RequestBody template template, @PathVariable Integer id) {
     try {
+    	System.out.println("checking the function");
         template existtemplate = service.get(id);
         service.save(template);
         return new ResponseEntity<>(HttpStatus.OK);
@@ -45,6 +48,7 @@ public ResponseEntity<?> update(@RequestBody template template, @PathVariable In
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }      
 }
+//delete
 @DeleteMapping("/templates/{id}")
 public void delete(@PathVariable Integer id) {
     service.delete(id);
